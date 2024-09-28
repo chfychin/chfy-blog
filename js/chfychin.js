@@ -87,7 +87,7 @@ function initializeAnniversary() {
         }
         return daysBetween(startDate, now);
     }
-    // 返回目标日期
+    // 返回目标或起始日期以及星期几
     function targetDate(dateStr, isLunar) {
         const [Year, Month, Day] = dateStr.split("-").map(Number);
         let now = new Date();
@@ -104,13 +104,23 @@ function initializeAnniversary() {
                 anniversaryDate = new Date(now.getFullYear() + 1, Month - 1, Day);
             }
         }
-        // 手动拼接日期，确保月份和日期都是两位数
+        // 获取星期几
+        const weekDay = anniversaryDate.toLocaleDateString('zh-CN', { weekday: 'long' });
+        // 返回年月日加星期几
         const year = anniversaryDate.getFullYear();
         const month = (anniversaryDate.getMonth() + 1).toString().padStart(2, '0'); // 月份从0开始，需要加1
         const day = anniversaryDate.getDate().toString().padStart(2, '0');
-        return `${year}-${month}-${day}`; // 使用'-'作为分隔符
+        return `${year}-${month}-${day} (${weekDay})`; // 使用'-'作为分隔符
         //   return anniversaryDate.toDateString();  // 直接返回斜杆日期
         // return anniversaryDate.toLocaleDateString('zh-CN');
+    }
+    // 返回目标或起始日期（根据 displayMode）
+    function targetOrStartDate(dateStr, isLunar, displayMode) {
+        if (displayMode === "elapsed") {
+            return dateStr; // 如果是elapsed模式，直接返回配置的日期（起始日）
+        } else {
+            return targetDate(dateStr, isLunar); // 否则，显示目标日期和星期几
+        }
     }
 
     const countdownElements = document.querySelectorAll(".countdown");
@@ -120,7 +130,18 @@ function initializeAnniversary() {
     countdownElements.forEach(function (elem) {
         const dateStr = elem.getAttribute("data-date");
         const isLunar = elem.hasAttribute("data-lunar");
-        elem.textContent = daysLeft(dateStr, isLunar);
+        const displayMode = elem.getAttribute("data-display-mode"); // 获取 display_mode
+        let daysText;
+        if (displayMode === "elapsed") {
+            // 显示已经过去的天数
+            daysText = totalDays(dateStr, isLunar);
+            elem.nextElementSibling.textContent = "天了"; // 显示“天了”
+        } else {
+            // 显示剩余天数
+            daysText = daysLeft(dateStr, isLunar);
+            elem.nextElementSibling.textContent = "天后"; // 显示“天后”
+        }
+        elem.textContent = daysText;
     });
 
     totalDaysElements.forEach(function (elem) {
@@ -129,11 +150,12 @@ function initializeAnniversary() {
         elem.textContent = totalDays(dateStr, isLunar);
     });
 
-    // 显示目标日期
+    // 显示目标或起始日期
     targetDateElements.forEach(function (elem) {
         const dateStr = elem.getAttribute("data-date");
         const isLunar = elem.hasAttribute("data-lunar");
-        elem.textContent = targetDate(dateStr, isLunar);
+        const displayMode = elem.getAttribute("data-display-mode"); // 获取 display_mode
+        elem.textContent = targetOrStartDate(dateStr, isLunar, displayMode);
     });
 }
 
