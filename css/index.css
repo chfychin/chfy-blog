@@ -2667,8 +2667,8 @@ i.anzhiyu-icon-hashtag {
   --tab-botton-bg: #f0f0f0;
   --tab-botton-color: #1f2d3d;
   --tab-button-hover-bg: #dcdcdc;
-  --tab-button-active-bg: #fff;
-  --card-bg: #fff;
+  --tab-button-active-bg: rgba(255,255,255,0.85);
+  --card-bg: rgba(255,255,255,0.85);
   --sidebar-bg: #f6f8fa;
   --btn-hover-color: #ff7242;
   --btn-color: #fff;
@@ -2740,7 +2740,7 @@ i.anzhiyu-icon-hashtag {
   --anzhiyu-meta-theme-post-color: #fff;
   --anzhiyu-meta-theme-color: #f7f9fe;
   --anzhiyu-theme-op-deep: rgba(66,89,239,0.867);
-  --global-bg: #f7f9fe;
+  --global-bg: rgba(255,255,255,0);
   --anzhiyu-theme: #425aef;
   --anzhiyu-theme-deep: #1856fb;
   --anzhiyu-theme-op: rgba(66,89,239,0.137);
@@ -2765,7 +2765,7 @@ i.anzhiyu-icon-hashtag {
   --anzhiyu-post-tabs-bg: #f2f5f8;
   --anzhiyu-secondbg: #f7f7f9;
   --anzhiyu-shadow-nav: 0 5px 12px -5px rgba(102,68,68,0.05);
-  --anzhiyu-card-bg: #fff;
+  --anzhiyu-card-bg: rgba(255,255,255,0.85);
   --anzhiyu-shadow-lightblack: 0 5px 12px -5px rgba(102,68,68,0);
   --anzhiyu-shadow-light2black: 0 5px 12px -5px rgba(102,68,68,0);
   --anzhiyu-card-border: #e3e8f7;
@@ -2781,7 +2781,7 @@ i.anzhiyu-icon-hashtag {
   --anzhiyu-blue: #5ca1ff;
   --anzhiyu-blue-tint: rgba(92,161,255,0.1);
   --anzhiyu-theme-op-deep: rgba(0,132,255,0.867);
-  --global-bg: #18171d;
+  --global-bg: rgba(255,255,255,0);
   --anzhiyu-theme: #f2b94b;
   --anzhiyu-theme-deep: #0076e5;
   --anzhiyu-theme-op: rgba(242,185,75,0.137);
@@ -2846,19 +2846,13 @@ input::placeholder {
   color: var(--font-color);
 }
 #web_bg {
+  filter: blur(4px);
   position: fixed;
   z-index: -999;
-  width: 200%;
-  height: 200%;
-  top: -50%;
-  left: -50%;
-  -webkit-transform: rotate(-1deg);
-  -moz-transform: rotate(-1deg);
-  -o-transform: rotate(-1deg);
-  -ms-transform: rotate(-1deg);
-  transform: rotate(-1deg);
+  width: 100%;
+  height: 100%;
   -webkit-overflow-scrolling: touch;
-  background: var(--anzhiyu-background);
+  background: url("https://tuchuang.voooe.cn/images/2024/10/16/background.webp");
   background-attachment: local;
   background-position: center;
   background-size: cover;
@@ -11127,7 +11121,7 @@ h1.page-title + .tag-cloud-list {
 #page-header.not-top-img {
   margin-bottom: 10px;
   height: 60px;
-  background: 0;
+  background: rgba(255,255,255,0.5);
 }
 #page-header.not-top-img #nav #menus .menus_item:hover > a {
   background: var(--anzhiyu-main);
