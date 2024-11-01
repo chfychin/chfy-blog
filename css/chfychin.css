@@ -523,14 +523,6 @@ body[data-type="anniversary"] #page .page-title {
 /* 欢迎信息start */
 
 /* 欢迎信息 */
-#welcome-info {
-  background: linear-gradient(45deg, #b9f4f3, #e3fbf9);
-  border-radius: 18px;
-  padding: 8px 8px;
-}
 
-[data-theme="dark"] #welcome-info {
-  background: #212121;
-}
 
 /* 欢迎信息end */

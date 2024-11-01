@@ -470,8 +470,8 @@ document.addEventListener("DOMContentLoaded", function () {
       ele.forEach(item => {
         item.classList.contains("url")
           ? fetchUrl(item.textContent).then(res => {
-              runJustifiedGallery(item, res);
-            })
+            runJustifiedGallery(item, res);
+          })
           : runJustifiedGallery(item, JSON.parse(item.textContent));
       });
     };
@@ -1799,7 +1799,7 @@ document.addEventListener("DOMContentLoaded", function () {
     anzhiyu.getCustomPlayList();
     anzhiyu.addEventListenerConsoleMusicList(false);
     anzhiyu.initPaginationObserver();
-
+    Bornforthis.setWelcome_info();
     setTimeout(() => {
       setInputFocusListener();
       if (typeof addFriendLinksInFooter === "function") {
