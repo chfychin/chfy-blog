@@ -370,12 +370,13 @@ document.addEventListener('pjax:complete', initFooterAnimal);
 
 /*---欢迎信息start---*/
 
+
 //get请求
 $.ajax({
     type: 'get',
     url: 'https://apis.map.qq.com/ws/location/v1/ip',
     data: {
-        key: 'TXWBZ-2UUCQ-FO75Q-2P7SA-3PZLT-RZBMX',
+        key: 'D7XBZ-HU6YU-BBQVX-GCBR4-EWU2V-HBFMW',
         output: 'jsonp',
     },
     dataType: 'jsonp',
