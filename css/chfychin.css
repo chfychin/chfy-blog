@@ -155,7 +155,18 @@ button {
   /* 鼠标悬停是左侧缩进归零，完全显示按钮 */
 }
 
+/*---字体css start---*/
 
+/* 字体css */
+@font-face {
+  font-family: 'HuangkaihuaLawyerFont';
+  /* 其中HuangkaihuaLawyerFont是引入的字体的名称，可以自定义 */
+  font-display: swap;
+  src: url('https://pcgdemo.chfychin.cn/fonts/huangkaihuaLawyerfont-2.ttf') format("truetype");
+  /* url中填写自己的字体地址，我使用的是本地文件夹所以用的是相对路径，如果是外部引用的话在其中写入链接地址就好了 */
+}
+
+/*---字体css end---*/
 
 /*---纪念日start---*/
 
