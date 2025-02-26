@@ -475,8 +475,8 @@ const Bornforthis = {
 
 const CountdownTimer = (() => {
     const config = {
-        targetDate: "2026-02-17",
-        targetName: "春节",
+        targetDate: "2025-12-20",
+        targetName: "考研倒计时",
         units: {
             day: { text: "今日", divider: 1, unit: "小时" },
             week: { text: "本周", divider: 24, unit: "天" },
