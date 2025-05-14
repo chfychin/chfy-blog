@@ -943,7 +943,7 @@ body[data-type="anniversary"] #page .page-title {
 
 /* essay-style-start */
 
-.author-info {
+/* .author-info {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -1136,6 +1136,6 @@ div#bber-tips {
     position: absolute;
     display: block;
   }
-}
+} */
 
 /* essay-style-end */
